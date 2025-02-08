@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dicoding Event</string>
+    <string name="text_empty">Event belum ada..</string>
+    <string name="set_favorite">Atur Favorite?</string>
+    <string name="iv_detail">Detail Foto</string>
+    <string name="tv_quota">"Sisa kuota: "</string>
+    <string name="btn_register">Daftar</string>
+    <string name="menu_fav">Menu Fav</string>
+    <string name="text_fav_empty">Kamu belum menambahkan event</string>
+    <string name="title_favorite">Favorite</string>
+</resources>
