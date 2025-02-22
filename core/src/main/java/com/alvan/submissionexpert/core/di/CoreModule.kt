@@ -8,6 +8,8 @@ import com.alvan.submissionexpert.core.data.remote.RemoteDataSource
 import com.alvan.submissionexpert.core.data.remote.network.ApiService
 import com.alvan.submissionexpert.core.domain.repository.IEventRepository
 import com.alvan.submissionexpert.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -43,12 +45,16 @@ val networkModule = module {
 }
 
 val databaseModule = module {
+    val passphrase: ByteArray = SQLiteDatabase.getBytes("alvan".toCharArray())
+    val factory = SupportFactory(passphrase)
     factory { get<EventDatabase>().eventDao() }
     single {
         Room.databaseBuilder(
             androidContext(),
             EventDatabase::class.java, "Event.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 

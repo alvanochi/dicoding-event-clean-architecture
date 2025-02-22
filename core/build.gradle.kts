@@ -41,6 +41,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
 
     api(libs.material)
     api(libs.recyclerview)
