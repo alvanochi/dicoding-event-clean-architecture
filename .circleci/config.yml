@@ -6,6 +6,7 @@ executors:
       - image: cimg/android:2023.08.1
     resource_class: medium
     environment:
+      CI: "true"
       JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
       GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2048m"
 

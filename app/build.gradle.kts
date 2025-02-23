@@ -27,6 +27,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            isMinifyEnabled = false
+            isDebuggable = true
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -42,6 +46,10 @@ android {
 }
 
 dependencies {
+    //leak-canary
+    if (!project.hasProperty("CI")) {
+        debugImplementation(libs.leakcanary.android)
+    }
 
     //koin
     implementation(libs.koin.android)
