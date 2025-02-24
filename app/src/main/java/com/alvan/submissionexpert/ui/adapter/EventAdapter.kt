@@ -1,12 +1,12 @@
-package com.alvan.submissionexpert.core.ui
+package com.alvan.submissionexpert.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.alvan.submissionexpert.core.databinding.ItemListEventBinding
 import com.alvan.submissionexpert.core.domain.model.Event
+import com.alvan.submissionexpert.databinding.ItemListEventBinding
 import com.bumptech.glide.Glide
 
 class EventAdapter : ListAdapter<Event, EventAdapter.ListViewHolder>(DIFF_CALLBACK) {

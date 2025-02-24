@@ -1,4 +1,4 @@
-package com.alvan.submissionexpert.main
+package com.alvan.submissionexpert.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alvan.submissionexpert.R
 import com.alvan.submissionexpert.core.data.Resource
-import com.alvan.submissionexpert.core.ui.EventAdapter
+import com.alvan.submissionexpert.ui.adapter.EventAdapter
 import com.alvan.submissionexpert.databinding.ActivityMainBinding
-import com.alvan.submissionexpert.detail.DetailActivity
+import com.alvan.submissionexpert.ui.detail.DetailActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {

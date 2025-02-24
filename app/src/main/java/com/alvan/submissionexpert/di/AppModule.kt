@@ -1,9 +1,9 @@
 package com.alvan.submissionexpert.di
 
-import com.alvan.submissionexpert.main.MainViewModel
+import com.alvan.submissionexpert.ui.main.MainViewModel
 import com.alvan.submissionexpert.core.domain.usecase.EventInteractor
 import com.alvan.submissionexpert.core.domain.usecase.EventUseCase
-import com.alvan.submissionexpert.detail.DetailViewModel
+import com.alvan.submissionexpert.ui.detail.DetailViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

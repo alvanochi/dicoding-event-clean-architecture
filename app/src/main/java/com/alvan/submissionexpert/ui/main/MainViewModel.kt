@@ -1,4 +1,4 @@
-package com.alvan.submissionexpert.main
+package com.alvan.submissionexpert.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

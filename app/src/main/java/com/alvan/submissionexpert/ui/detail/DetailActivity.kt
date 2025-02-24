@@ -1,4 +1,4 @@
-package com.alvan.submissionexpert.detail
+package com.alvan.submissionexpert.ui.detail
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -41,6 +41,7 @@ class DetailActivity : AppCompatActivity() {
                     detailEvent.description,
                     HtmlCompat.FROM_HTML_MODE_LEGACY
                 )
+                btnRegister.isEnabled = detailEvent.registrants.let { detailEvent.quota.minus(it) } != 0
                 btnRegister.setOnClickListener {
                     val intent = Intent(Intent.ACTION_VIEW).apply {
                         data = Uri.parse(detailEvent.link)

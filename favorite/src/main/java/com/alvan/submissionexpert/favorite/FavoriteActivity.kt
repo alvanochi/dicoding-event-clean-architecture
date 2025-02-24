@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alvan.submissionexpert.core.ui.EventAdapter
-import com.alvan.submissionexpert.detail.DetailActivity
+import com.alvan.submissionexpert.ui.adapter.EventAdapter
+import com.alvan.submissionexpert.ui.detail.DetailActivity
 import com.alvan.submissionexpert.favorite.databinding.ActivityFavoriteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules

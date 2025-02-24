@@ -1,4 +1,4 @@
-package com.alvan.submissionexpert.detail
+package com.alvan.submissionexpert.ui.detail
 
 import androidx.lifecycle.ViewModel
 import com.alvan.submissionexpert.core.domain.model.Event
