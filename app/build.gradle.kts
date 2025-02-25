@@ -50,6 +50,9 @@ android {
 
 dependencies {
 
+    //leak-canary
+    debugImplementation(libs.leakcanary.android)
+
     //koin
     implementation(libs.koin.android)
 

@@ -9,4 +9,5 @@
     <string name="text_fav_empty">Kamu belum menambahkan event</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_event">Judul event</string>
+    <string name="iv_item_image">Item Photo</string>
 </resources>
