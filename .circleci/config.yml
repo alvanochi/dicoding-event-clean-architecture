@@ -1,27 +1,21 @@
 version: 2.1
 
-executors:
-  android-executor:
-    docker:
-      - image: cimg/android:2023.08.1
-    resource_class: medium
-    environment:
-      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
-      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx2048m"
+orbs:
+  android: circleci/android@2.5.0
 
 jobs:
   build:
-    executor: android-executor
+    executor:
+      name: android/android-machine
+      resource-class: large
+      tag: default
     steps:
       - checkout
       - restore_cache:
           key: android-orb-v1-
       - run:
-          name: Check Java Version
-          command: java -version
-      - run:
-          name: Set Permissions for Gradle
-          command: chmod +x ./gradlew
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
@@ -33,7 +27,7 @@ jobs:
       - run:
           name: Run Build
           command: ./gradlew build
-      - store_artifacts: 
+      - store_artifacts:
           path: app/build/reports
           destination: reports
       - run:
@@ -41,6 +35,9 @@ jobs:
           command: ./gradlew lint test
       - store_test_results:
           path: app/build/test-results
-      - store_artifacts:  
+      - store_artifacts:
+          path: build/reports/kover/html
+          destination: kover
+      - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: artifact-file
